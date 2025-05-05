@@ -1,4 +1,3 @@
-
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
@@ -76,12 +75,14 @@ const Index = () => {
       <section className="relative h-screen flex items-center">
         <div 
           className="absolute inset-0 z-0" 
-          style={{
-            backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400')",
-            backgroundSize: "cover",
-            backgroundPosition: "center",
-            filter: "brightness(0.7)"
-          }}
+          style={
+            {
+              backgroundImage: "url('https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?q=80&w=1400')",
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              filter: "brightness(0.7)"
+            }
+          }
         />
         <div className="container mx-auto px-6 z-10 text-white">
           <h1 className="text-5xl md:text-6xl font-bold leading-tight mb-6">
@@ -138,29 +139,26 @@ const Index = () => {
           <h2 className="text-3xl font-bold text-center mb-12">Наши работы</h2>
           
           <div className="flex justify-center mb-8">
-            <TabsList>
-              <TabsTrigger 
-                value="all" 
+            <div className="inline-flex h-10 items-center justify-center rounded-md bg-muted p-1 text-muted-foreground">
+              <button 
                 onClick={() => setActiveFilter("all")}
-                className={activeFilter === "all" ? "bg-blue-500 text-white" : ""}
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ${activeFilter === "all" ? "bg-blue-500 text-white" : "hover:bg-accent hover:text-accent-foreground"}`}
               >
                 Все проекты
-              </TabsTrigger>
-              <TabsTrigger 
-                value="residential" 
+              </button>
+              <button 
                 onClick={() => setActiveFilter("residential")}
-                className={activeFilter === "residential" ? "bg-blue-500 text-white" : ""}
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ${activeFilter === "residential" ? "bg-blue-500 text-white" : "hover:bg-accent hover:text-accent-foreground"}`}
               >
                 Жилые помещения
-              </TabsTrigger>
-              <TabsTrigger 
-                value="commercial" 
+              </button>
+              <button 
                 onClick={() => setActiveFilter("commercial")}
-                className={activeFilter === "commercial" ? "bg-blue-500 text-white" : ""}
+                className={`inline-flex items-center justify-center whitespace-nowrap rounded-sm px-3 py-1.5 text-sm font-medium ${activeFilter === "commercial" ? "bg-blue-500 text-white" : "hover:bg-accent hover:text-accent-foreground"}`}
               >
                 Коммерческие
-              </TabsTrigger>
-            </TabsList>
+              </button>
+            </div>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -402,7 +400,7 @@ const Index = () => {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-gray-800 text-center">
-            <p>© 2025 Design Studio. Все права защищены.</p>
+            <p> 2025 Design Studio. Все права защищены.</p>
           </div>
         </div>
       </footer>
